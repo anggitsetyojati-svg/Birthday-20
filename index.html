@@ -496,8 +496,8 @@
             if (videoElemen) {
                 videoElemen.pause(); // Otomatis memberhentikan video saat berpindah halaman
             }
-            document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
-            document.getElementById(id).classList.add('active');
+document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));       document.getElementById(id).classList.add('active');
+localStorage.setItem('lastPage', id);
         }
 
         // Login Function
