@@ -383,24 +383,22 @@
 }
 
 #surprise img {
-    width: min(85%, 450px);
-    border-radius: 25px;
-    box-shadow: 0 0 50px #ff4f9f;
-    animation: zoomIn 1s ease;
+#surprise {
+    display: none;
+    margin-top: 25px;
+    text-align: center;
+    animation: fadeIn 1s ease;
+}
+
+#surprise img {
+    width: min(80%, 350px);
+    border-radius: 20px;
+    box-shadow: 0 0 40px #ff75b5;
 }
 
 #surprise h2 {
-    margin-top: 20px;
-    color: white;
+    margin-bottom: 15px;
 }
-
-@keyframes zoomIn {
-    from {
-        transform: scale(0);
-    }
-    to {
-        transform: scale(1);
-    }
 }
 
     </style>
@@ -479,13 +477,12 @@
             <h2>I Love You sayangg💞</h2>
             <br>
             <button style="max-width:320px" onclick="celebrateForever()">🎊🎉🥳Haapy Birthday 🥳🎉🎊</button>
-        </div>
-    </div>
-<!-- Surprise Photo -->
+
 <div id="surprise">
-    <img src="surprise.png">
     <h2>💖 Surprise Untuk Kamu 💖</h2>
+    <img src="qrcode_363115864_cbbf724ca4181ba65dde38d690d08380.png">
 </div>
+    
     <!-- Modal for Image Zoom -->
     <div class="modal" id="modal" onclick="this.style.display='none'">
         <img id="modalImg">
@@ -672,10 +669,9 @@ function celebrateForever() {
     // tombol ditekan 3 kali
     if(celebrateCount === 3){
 
-        setTimeout(()=>{
+    document.getElementById("surprise").style.display = "block";
 
-            document.getElementById("surprise").style.display="flex";
-
+}
             for(let i=0;i<150;i++){
                 setTimeout(createHeart,i*20);
             }
