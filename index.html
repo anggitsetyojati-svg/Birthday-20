@@ -97,8 +97,30 @@
         input::placeholder {
             color: rgba(255, 255, 255, 0.6);
         }
+        /* Tombol Kembali di Pojok Kiri Atas */
+        .floating-back {
+            position: absolute;
+            top: calc(15px + env(safe-area-inset-top));
+            left: 20px;
+            width: auto;
+            padding: 8px 16px;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 20px;
+            color: #ff89c7;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 100;
+            margin-top: 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
 
-        /* Hearts Animation */
+        .floating-back:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: scale(1.05);
+        }
+
         .hearts {
             position: fixed;
             inset: 0;
@@ -398,6 +420,7 @@
 
     <!-- Envelope Page -->
     <div class="page" id="envelope">
+        <button class="floating-back" onclick="go('login')">⬅ Kembali</button>
         <div class="envelope" onclick="openLetter()">💌</div>
         
         <p>Coba pencet amplopnya, ada surat nihh dibaca yaa..</p>
@@ -414,6 +437,7 @@
 
     <!-- Gallery Page -->
     <div class="page" id="galleryPage">
+        <button class="floating-back" onclick="go('letter')">⬅ Kembali</button>
         <h2 style="margin-bottom:20px">📸 Potret</h2>
         <div class="gallery">
             <div class="polaroid" style="--r:-4" onclick="zoom('img1.jpg')"><img width="3072" height="4080" alt="img1.jpg" src="img1.jpg" /><p>My Princess</p></div>
@@ -426,6 +450,7 @@
 
     <!-- Video Page -->
     <div class="page" id="videoPage">
+        <button class="floating-back" onclick="go('galleryPage')">⬅ Kembali</button>
         <h2>Memory💞💖</h2><br>
         <video controls src="https://github.com/user-attachments/assets/9bad4a27-9784-4ce2-a62c-0d2b77d33eb5"></video><br><br>
         <button style="max-width:300px" onclick="go('finalPage')">❤️‍🔥 satu lagi nihh..</button>
@@ -433,6 +458,7 @@
 
     <!-- Final Page -->
     <div class="page" id="finalPage">
+        <button class="floating-back" onclick="go('videoPage')">⬅ Kembali</button>
         <div class="final">
             <h1 class="glow">Andrea Nadine Thea Melinda 🥰</h1><br>
             <p>
