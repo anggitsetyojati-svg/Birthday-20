@@ -227,6 +227,7 @@
     transition: transform 0.3s ease;
     width: 90%;
     max-width: 420px;
+    overflow-y: auto;
 }
 
 .polaroid:hover {
@@ -246,6 +247,10 @@
     font-weight: 600;
     font-size: 15px;
 }
+.polaroid:first-of-type {
+    margin-top: 50px; /* Menolak box pertama ke bawah agar tidak terpotong */
+        }
+        
 
 /* Modal */
         .modal {
