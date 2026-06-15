@@ -563,21 +563,29 @@ Selamat ulang tahun yang ke-20, Cantikuu🎊🎉🥳🥰💞💖.
         }
 
         // Create Fireworks Burst
-        function createFireworkBurst(x, y) {
-            const colors = [ 
-                ['#ff4f9f', '#ff89c7', '#ffb3d9', '#ff1493', '#ff69b4']
-                ['#ff3700', '#ff6e00', '#ff9d00', '#ffcd00', '#fff5cc'],
-                ['#00f5d4', '#7b2cbf', '#ff007f', '#ffee32', '#00f0ff'],
-            ];
-            const particleCount = 40;
-            
-            for (let i = 0; i < particleCount; i++) {
-                setTimeout(() => {
-                    const color = colors[Math.floor(Math.random() * colors.length)];
-                    createFireworkParticle(x, y, color);
-                }, i * 15);
-            }
-        }
+        // Create Fireworks Burst
+function createFireworkBurst(x, y) {
+  // Array 2 dimensi yang berisi kumpulan palet warna unik
+  const colors = [
+    ['#ff4f9f', '#ff89c7', '#ffb3d9', '#ff1493', '#ff69b4'],
+    ['#ff3700', '#ff6e00', '#ff9d00', '#ffcd00', '#fff5cc'],
+    ['#00f5d4', '#7b2cbf', '#ff007f', '#ffee32', '#00f0ff']
+  ];
+
+  // Mengambil satu palet warna secara acak dari daftar di atas
+  const selectedPalette = colors[Math.floor(Math.random() * colors.length)];
+  const particleCount = 40;
+
+  for (let i = 0; i < particleCount; i++) {
+    setTimeout(() => {
+      // Mengambil satu warna acak dari palet yang sudah terpilih
+      const color = selectedPalette[Math.floor(Math.random() * selectedPalette.length)];
+      
+      // Memanggil fungsi pembuat partikel (pastikan fungsi ini sudah Anda definisikan)
+      createFireworkParticle(x, y, color);
+    }, i * 15);
+  }
+} // Penutup fungsi yang sebelumnya hilang
 
         // Celebrate Forever - Hearts + Fireworks
         function celebrateForever() {
