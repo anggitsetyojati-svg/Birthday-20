@@ -90,7 +90,7 @@
 
         input {
             background: rgba(255, 255, 255, 0.1);
-            color: putih;
+            color: pink;
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
@@ -226,6 +226,7 @@
     cursor: pointer;
     transition: transform 0.3s ease;
     width: 90%;
+    padding: 40px;
     max-width: 420px;
     overflow: hidden;
 }
@@ -415,6 +416,7 @@
             <h1 class="glow">Andrea Nadine Thea Melinda 🥰</h1><br>
             <p>
                 Happy birthday day yaa cintakuu..🥳🥳🎉🎊💕💖
+                
     Aku tau aku ga sempurna, tapi aku selalu berusaha jadi seseorang yang bisa kamu andalkan. kalau ayang capek, butuh tempat cerita, atau cuma pengen didenger, aku selalu ada di sini.
     
     Terima kasih sudah hadir dalam hidupku. Terima kasih sudah menjadi tempat pulang untuk cerita, tawa, dan keluh kesahku.
@@ -457,7 +459,7 @@
         function openLetter() {
             go('letter');
             
-            const txt = `Haii Cintaa💕
+            const txt = `Haii Cintaakuu💕
 
 Untuk Ayangg, Andrea Nadine Thea Melinda 💖
 
@@ -524,7 +526,7 @@ Selamat ulang tahun yang ke-20, Cantikuu🎊🎉🥳🥰💞💖.
         function createHeart() {
             let h = document.createElement('div');
             h.className = 'heart';
-            h.innerHTML = '💖';
+            h.innerHTML = '💕';
             h.style.left = Math.random() * 100 + '%';
             h.style.fontSize = (20 + Math.random() * 30) + 'px';
             h.style.animationDuration = (5 + Math.random() * 5) + 's';
@@ -574,7 +576,7 @@ function createFireworkBurst(x, y) {
 
   // Mengambil satu palet warna secara acak dari daftar di atas
   const selectedPalette = colors[Math.floor(Math.random() * colors.length)];
-  const particleCount = 40;
+  const particleCount = 45;
 
   for (let i = 0; i < particleCount; i++) {
     setTimeout(() => {
