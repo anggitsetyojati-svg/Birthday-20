@@ -497,7 +497,7 @@
                 videoElemen.pause(); // Otomatis memberhentikan video saat berpindah halaman
             }
 document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));       document.getElementById(id).classList.add('active');
-SessionStorage.setItem('lastPage', id);
+sessionStorage.setItem('lastPage', id);
         }
 
         // Login Function
@@ -695,7 +695,7 @@ function createFireworkBurst(x, y) {
         }
                         // LOGIKA BARU: Cek halaman terakhir saat web di-refresh atau dimuat ulang
         window.addEventListener('DOMContentLoaded', () => {
-            const lastPage = SessionStorage.getItem('lastPage');
+            const lastPage = sessionStorage.getItem('lastPage');
             
             // Jika ada halaman tersimpan dan itu bukan halaman awal/intro
             if (lastPage && lastPage !== 'intro') {
