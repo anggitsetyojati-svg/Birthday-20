@@ -309,15 +309,24 @@
             }
         }
 
-        @media (max-width: 480px) {
+                @media (max-width: 480px) {
             .page {
                 padding: 10px;
-                padding-top: calc(40px + env(safe-area-insert-top));
-                justify-content: flex-start;
+                /* PERBAIKAN 1: Tambahkan jarak aman atas yang lebih besar */
+                padding-top: calc(100px + env(safe-area-inset-top)) !important;
+                /* PERBAIKAN 2: Ubah pengetengahan agar konten mengalir normal dari atas */
+                justify-content: flex-start !important;
+                align-items: center !important;
             }
+
+            /* PERBAIKAN 3: Memastikan elemen galeri memanfaatkan jarak padding di atasnya */
             .gallery {
-                padding-top: 140px !important;
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
+                
             .card {
                 padding: 20px;
                 width: 95%;
@@ -363,6 +372,7 @@
                 font-size: 13px;
             }
         }
+
     </style>
 </head>
 <body>
