@@ -309,22 +309,21 @@
             }
         }
 
-                @media (max-width: 480px) {
+                        @media (max-width: 480px) {
             .page {
                 padding: 10px;
-                /* PERBAIKAN 1: Tambahkan jarak aman atas yang lebih besar */
-                padding-top: calc(100px + env(safe-area-inset-top)) !important;
-                /* PERBAIKAN 2: Ubah pengetengahan agar konten mengalir normal dari atas */
+                /* PERBAIKAN UTAMA: Mengubah safe-area-insert-top menjadi safe-area-inset-top */
+                padding-top: calc(50px + env(safe-area-inset-top)) !important;
                 justify-content: flex-start !important;
-                align-items: center !important;
             }
 
-            /* PERBAIKAN 3: Memastikan elemen galeri memanfaatkan jarak padding di atasnya */
+            /* PERBAIKAN KEDUA: Memaksa Polaroid paling pertama untuk turun ke bawah */
+            .polaroid:first-of-type {
+                margin-top: 140px !important;
+            }
+
             .gallery {
                 width: 100%;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
             }
                 
             .card {
