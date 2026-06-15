@@ -475,6 +475,10 @@
             <h2>I Love You sayangg💞</h2>
             <br>
             <button style="max-width:320px" onclick="celebrateForever()">🎊🎉🥳Haapy Birthday 🥳🎉🎊</button>
+        <div id="secretGift" style="display: none; opacity: 0; transition: opacity 1s ease; margin-top: 30px; text-align: center;">
+    <img src="1000519992.png" alt="Special Gift" style="width: min(80%, 300px); height: auto; border-radius: 20px; box-shadow: 0 0 35px rgba(255, 79, 159, 0.5);">
+    <p style="font-size: 14px; margin-top: 10px; color: #ff89c7; font-weight: 600;">✨ Scan ini untuk hadiahnya yaa, semoga suka..✨</p>
+        </div>
         </div>
     </div>
 
@@ -633,15 +637,17 @@ function createFireworkBurst(x, y) {
       // Mengambil satu warna acak dari palet yang sudah terpilih
       const color = selectedPalette[Math.floor(Math.random() * selectedPalette.length)];
       
-      // Memanggil fungsi pembuat partikel (pastikan fungsi ini sudah Anda definisikan)
       createFireworkParticle(x, y, color);
     }, i * 15);
   }
-} // Penutup fungsi yang sebelumnya hilang
+}
 
-        // Celebrate Forever - Hearts + Fireworks
+                // PENTING: Taruh variabel ini di luar fungsi untuk menyimpan jumlah klik
+        let clickCount = 0;
+
+        // Celebrate Forever - Hearts + Fireworks + QR Code Hadiah
         function celebrateForever() {
-            // Create multiple fireworks from different positions
+            // Kembang api dan hati bawaan Anda tetap jalan setiap kali diklik
             const positions = [
                 { x: window.innerWidth * 0.2, y: window.innerHeight * 0.3 },
                 { x: window.innerWidth * 0.4, y: window.innerHeight * 0.9 },
@@ -653,18 +659,39 @@ function createFireworkBurst(x, y) {
                 { x: window.innerWidth * 0.9, y: window.innerHeight * 0.7 }
             ];
 
-            // Launch fireworks in sequence
             positions.forEach((pos, index) => {
                 setTimeout(() => {
                     createFireworkBurst(pos.x, pos.y);
                 }, index * 200);
             });
 
-            // Launch heart storm
             for (let i = 0; i < 120; i++) {
                 setTimeout(createHeart, i * 30);
             }
+
+            // --- LOGIKA HITUNG 4 KALI KLIK ---
+            clickCount++; // Tambah hitungan setiap ditekan
+            
+            if (clickCount === 4) { // Tepat di klik ke-4, QR Code akan muncul
+                const giftContainer = document.getElementById('secretGift');
+                
+                // Aktifkan wadah gambarnya
+                giftContainer.style.display = 'block';
+                
+                // Beri animasi fade-in halus
+                setTimeout(() => {
+                    giftContainer.style.opacity = '1';
+                    
+                    // Otomatis gulir halaman ke bawah agar gambarnya langsung terlihat
+                    const finalPage = document.getElementById('finalPage');
+                    finalPage.scrollTo({
+                        top: finalPage.scrollHeight,
+                        behavior: 'smooth'
+                    });
+                }, 100);
+            }
         }
+
     </script>
 </body>
 </html>
