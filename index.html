@@ -485,6 +485,10 @@
     <script>
         // Navigation Function
         function go(id) {
+            const videoElemen = document.querySelector('video');
+            if (videoElemen) {
+                videoElemen.pause(); // Otomatis memberhentikan video saat berpindah halaman
+            }
             document.querySelectorAll('.page').forEach(x => x.classList.remove('active'));
             document.getElementById(id).classList.add('active');
         }
