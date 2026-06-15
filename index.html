@@ -526,7 +526,7 @@ Di hari ulang tahunmu ini, aku ingin mengucapkan terima kasih untuk semua hal ya
 
 Aku bersyukur kepada Tuhan karena telah mempertemukanku denganmu. Dari sekian banyak orang di dunia ini, aku merasa beruntung karena bisa mengenalmu, mencintaimu, dan berjalan bersamamu hingga saat ini.
 
-Ayangg, aku berharap di usia yang baru ini kamu selalu diberikan kesehatan, kebahagiaan, kekuatan, dan keberhasilan dalam setiap langkah yang kamu ambil. Semoga semua impian, harapan, dan cita-citamu menjadi kenyataan.
+Aku berharap di usia yang baru ini kamu selalu diberikan kesehatan, kebahagiaan, kekuatan, dan keberhasilan dalam setiap langkah yang kamu ambil. Semoga semua impian, harapan, dan cita-citamu menjadi kenyataan.
 
 Aku juga ingin kamu tahu bahwa kehadiranmu sangat berarti bagiku. Senyummu, perhatianmu, cara kamu peduli, dan semua hal kecil yang kamu lakukan sering kali menjadi sesuatu yang membuat hariku lebih indah.
 
@@ -693,6 +693,24 @@ function createFireworkBurst(x, y) {
                 }, 100);
             }
         }
+                        // LOGIKA BARU: Cek halaman terakhir saat web di-refresh atau dimuat ulang
+        window.addEventListener('DOMContentLoaded', () => {
+            const lastPage = localStorage.getItem('lastPage');
+            
+            // Jika ada halaman tersimpan dan itu bukan halaman awal/intro
+            if (lastPage && lastPage !== 'intro') {
+                // Sembunyikan halaman intro bawaan terlebih dahulu
+                document.getElementById('intro').classList.remove('active');
+                
+                // Jika halaman terakhir adalah halaman surat (letter), jalankan ulang fungsi ketik
+                if (lastPage === 'letter') {
+                    openLetter();
+                } else {
+                    // Jika halaman lain, langsung tampilkan halaman tersebut
+                    document.getElementById(lastPage).classList.add('active');
+                }
+            }
+        });
 
     </script>
 </body>
