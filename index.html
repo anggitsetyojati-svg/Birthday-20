@@ -482,6 +482,7 @@
     <h2>💖 Surprise Untuk Kamu 💖</h2>
     <img src="qrcode_363115864_cbbf724ca4181ba65dde38d690d08380.png">
 </div>
+        </div>
     
     <!-- Modal for Image Zoom -->
     <div class="modal" id="modal" onclick="this.style.display='none'">
@@ -665,15 +666,12 @@ function celebrateForever() {
         setTimeout(createHeart,i*30);
     }
 
-
-    // tombol ditekan 3 kali
+            for(let i=0;i<150;i++){
+                setTimeout(createHeart,i*20);
+                // tombol ditekan 3 kali
     if(celebrateCount === 3){
 
     document.getElementById("surprise").style.display = "block";
-
-
-            for(let i=0;i<150;i++){
-                setTimeout(createHeart,i*20);
             }
 
         },1500);
