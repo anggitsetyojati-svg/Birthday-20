@@ -27,7 +27,7 @@
             align-items: safe center;
             flex-direction: column;
             padding: 20px;
-            padding-top: 40px;
+            padding-top: calc(40px + env(safe-area-insert-top));
             text-align: center;
             overflow-y: auto;
         }
@@ -236,7 +236,8 @@
 
 .polaroid img {
     width: 100%;
-    height: 260px;
+    height: auto;
+    aspect-ratio: 4/3;
     object-fit: cover;
     display: block;
 }
@@ -292,8 +293,10 @@
         /* Responsive */
         @media (min-width: 768px) {
             .gallery {
+                display: grid;
                 grid-template-columns: repeat(2, 1fr);
                 max-width: 850px;
+                align-item: start;
             }
             
             .polaroid {
