@@ -392,7 +392,7 @@
 
     <!-- Gallery Page -->
     <div class="page" id="galleryPage">
-        <h2 style="margin-bottom:20px">📸 potret</h2>
+        <h2 style="margin-bottom:20px">📸 Potret</h2>
         <div class="gallery">
             <div class="polaroid" style="--r:-4" onclick="zoom('img1.jpg')"><img width="3072" height="4080" alt="img1.jpg" src="img1.jpg" /><p>My Princess</p></div>
             <div class="polaroid" style="--r:3" onclick="zoom('img2.jpg')"><img width="900" height="1600" alt="img2.jpg" src="img2.jpg" /><p>Our Story</p></div>
@@ -404,7 +404,7 @@
 
     <!-- Video Page -->
     <div class="page" id="videoPage">
-        <h2>Video Kenangan Kita</h2><br>
+        <h2>Memory💞💖</h2><br>
         <video controls src="https://github.com/user-attachments/assets/9bad4a27-9784-4ce2-a62c-0d2b77d33eb5"></video><br><br>
         <button style="max-width:300px" onclick="go('finalPage')">❤️‍🔥 satu lagi nihh..</button>
     </div>
@@ -564,8 +564,12 @@ Selamat ulang tahun yang ke-20, Cantikuu🎊🎉🥳🥰💞💖.
 
         // Create Fireworks Burst
         function createFireworkBurst(x, y) {
-            const colors = ['#ff4f9f', '#ff89c7', '#ffb3d9', '#ff1493', '#ff69b4'];
-            const particleCount = 30;
+            const colors = [ 
+                ['#ff4f9f', '#ff89c7', '#ffb3d9', '#ff1493', '#ff69b4']
+                ['#ff3700', '#ff6e00', '#ff9d00', '#ffcd00', '#fff5cc'],
+                ['#00f5d4', '#7b2cbf', '#ff007f', '#ffee32', '#00f0ff'],
+            ];
+            const particleCount = 40;
             
             for (let i = 0; i < particleCount; i++) {
                 setTimeout(() => {
@@ -580,6 +584,7 @@ Selamat ulang tahun yang ke-20, Cantikuu🎊🎉🥳🥰💞💖.
             // Create multiple fireworks from different positions
             const positions = [
                 { x: window.innerWidth * 0.2, y: window.innerHeight * 0.3 },
+                { x: window.innerWidth * 0.4, y: window.innerHeight * 0.9 },
                 { x: window.innerWidth * 0.1, y: window.innerHeight * 0.1 },
                 { x: window.innerWidth * 0.5, y: window.innerHeight * 0.2 },
                 { x: window.innerWidth * 0.8, y: window.innerHeight * 0.3 },
