@@ -505,7 +505,7 @@ sessionStorage.setItem('lastPage', id);
             const n = document.getElementById('nama').value.toLowerCase();
             const p = document.getElementById('pin').value;
             
-            if ((n.includes('andrea') || n.includes('nadine')) && p === '161223') {
+            if ((n.includes('andrea') || n.includes('nadine') || n.includes('thea') || n.includes('melinda')) && p === '161223') {
                 go('envelope');
             } else {
                 document.getElementById('msg').innerText = 'Nama anda atau Pin "kita" salah';
@@ -569,7 +569,7 @@ Selamat ulang tahun yang ke-20, Cantikuu🎊🎉🥳🥰💞💖.
                     el.innerHTML = txt + '<span class="typing-cursor"></span>';
                     clearInterval(t);
                 }
-            }, 45);
+            }, 35);
         }
 
         // Zoom Image Function
